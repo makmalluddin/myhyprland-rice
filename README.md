@@ -1,2 +1,3 @@
 # myhrprland-rice
-Dotfiles configuration my fedora hyprland rice
+
+Dotfiles configuration my fedora hyprland
