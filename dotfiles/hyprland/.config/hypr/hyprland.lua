@@ -47,6 +47,7 @@ local menu = "rofi -show drun"
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
+	hl.exec_cmd("/usr/libexec/polkit-mate-authentication-agent-1")
 end)
 --   hl.exec_cmd(terminal)
 --   hl.exec_cmd("nm-applet")
@@ -228,7 +229,7 @@ hl.config({
 		sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 
 		touchpad = {
-			natural_scroll = false,
+			natural_scroll = true,
 		},
 	},
 })
