@@ -328,20 +328,13 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- Screenshot region, annotate with satty, and copy to clipboard
-hl.bind(
-	"Print",
-	hl.dsp.exec_cmd([[
-    grim -g "$(slurp)" - | satty --filename - --copy-command wl-copy --early-exit --fullscreen
-]])
-)
+hl.bind("Print", hl.dsp.exec_cmd("~/.config/hypr/screenshot.sh area"))
 
--- Fullscreen screenshot, annotate, and copy to clipboard
-hl.bind(
-	"SHIFT+Print",
-	hl.dsp.exec_cmd([[
-    grim - | satty --filename - --copy-command wl-copy --early-exit --fullscreen
-]])
-)
+-- Screenshot active monitor only, annotate, and copy to clipboard
+hl.bind("CTRL+SHIFT+Print", hl.dsp.exec_cmd("~/.config/hypr/screenshot.sh active"))
+
+-- Fullscreen screenshot (all monitors), annotate, and copy to clipboard
+hl.bind("SHIFT+Print", hl.dsp.exec_cmd("~/.config/hypr/screenshot.sh full"))
 
 -- Adjust Brigthness
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("~/.config/hypr/adjustbrightness.sh"))
